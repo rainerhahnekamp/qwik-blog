@@ -1,0 +1,4 @@
+POST http://localhost:5173/api/articles
+Content-Type: application/json
+
+{"name": "Article", "content": "dummy content"}

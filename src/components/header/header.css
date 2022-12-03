@@ -1,5 +1,6 @@
 header {
   display: flex;
+  align-items: center;
   background: white;
   border-bottom: 10px solid var(--qwik-dark-purple);
 }

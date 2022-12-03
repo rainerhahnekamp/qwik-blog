@@ -7,12 +7,13 @@ export default component$(() => {
 
   return (
     <header>
-      <div class="logo">
-        <a href="/">
-          <h1>Rainer Hahnekamp</h1>
-        </a>
-      </div>
+      <a href="/">
+        <h1>Rainer Hahnekamp</h1>
+      </a>
       <ul>
+        <li>
+          <a href="/admin">Administration</a>
+        </li>
         <li>
           <a href="https://qwik.builder.io/docs/components/overview/">
             Articles
