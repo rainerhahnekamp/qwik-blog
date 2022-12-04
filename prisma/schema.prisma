@@ -15,6 +15,10 @@ model Article {
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   name        String
+  teaser      String
   content     String
+  url         String
   publishedAt DateTime?
+
+  @@unique(url)
 }

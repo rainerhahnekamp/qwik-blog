@@ -5,5 +5,10 @@ export type ArticleProps = {
   article: Article;
 };
 export default component$(({ article }: ArticleProps) => {
-  return <h3>{article.name}</h3>;
+  return (
+    <>
+      <h2>{article.name}</h2>
+      <p>{article.content}</p>
+    </>
+  );
 });
