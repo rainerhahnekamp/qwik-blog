@@ -3,11 +3,9 @@ import { Article } from "~/model/article";
 import {
   addArticleRequestSchema,
   addArticleToDb,
-  removeArticleFromDb,
   saveArticleRequestSchema,
   saveArticleToDb,
 } from "~/services/article-service";
-import { findArticleById } from "~/server/articles";
 
 export const onPost: RequestHandler<Article> = async ({ request }) => {
   const addArticleRequest = addArticleRequestSchema.parse(await request.json());

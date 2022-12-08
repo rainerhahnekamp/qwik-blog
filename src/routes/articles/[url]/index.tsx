@@ -9,8 +9,12 @@ export const onGet: RequestHandler = async ({ url }) => {
   if (!articleUrl) {
     throw new Error(`cannot parse ${url}`);
   }
+  const article = await findArticleByUrl(articleUrl);
+  if (!article) {
+      throw new Error(`cannot find article with url ${articleUrl}`)
+  }
 
-  return await findArticleByUrl(articleUrl);
+  return article;
 };
 
 export default component$(() => {

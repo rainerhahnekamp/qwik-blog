@@ -1,7 +1,7 @@
 import { component$, PropFunction } from "@builder.io/qwik";
 
 export type TextareaProps = {
-  label: string;
+  label?: string;
   name: string;
   value?: string;
 
@@ -14,9 +14,13 @@ export type TextareaProps = {
 export default component$((props: TextareaProps) => {
   return (
     <div className="form-group mb-6">
-      <label className="form-label inline-block mb-2 text-gray-700">
-        {props.label}
-      </label>
+      {props.label ? (
+        <label className="form-label inline-block mb-2 text-gray-700">
+          {props.label}
+        </label>
+      ) : (
+        <></>
+      )}
       <textarea
         value={props.value || ""}
         rows={props.rows || 5}

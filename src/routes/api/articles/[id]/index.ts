@@ -9,6 +9,5 @@ export const onDelete: RequestHandler<Article> = async ({
   if (!articleId) {
     throw new Error(`cannot parse ${url}`);
   }
-
   await removeArticleFromDb(parseInt(articleId));
 };
