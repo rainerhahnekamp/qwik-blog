@@ -31,11 +31,16 @@ export default component$(() => {
             <pre>{reason}</pre>
           </>
         )}
-        onResolved={(articles: Article[]) => (
+        onResolved={(articles) => (
           <>
             {articles.length ? (
               articles.map((article, ix) => (
-                <ArticleComponent key={ix} article={article}></ArticleComponent>
+                <>
+                  <ArticleComponent
+                    key={ix}
+                    article={article}
+                  ></ArticleComponent>
+                </>
               ))
             ) : (
               <p>

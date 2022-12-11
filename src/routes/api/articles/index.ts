@@ -12,6 +12,10 @@ export const onPost: RequestHandler<Article> = async ({ request }) => {
   return addArticleToDb(addArticleRequest);
 };
 
+export const onGet: RequestHandler<Article> = async ({ request }) => {
+  console.log(request.formData());
+};
+
 export const onPut: RequestHandler<Article> = async ({
   request,
 }): Promise<Article> => {

@@ -1,8 +1,13 @@
 import { $, component$, Resource, useSignal } from "@builder.io/qwik";
 import { Article, articleSchema } from "~/model/article";
 import ArticleForm, { ArticleFormData } from "~/components/article-form";
-import { RequestHandler, useEndpoint } from "@builder.io/qwik-city";
+import {
+  RequestHandler,
+  useEndpoint,
+  useNavigate,
+} from "@builder.io/qwik-city";
 import { findArticleById } from "~/server/articles";
+import { isServer } from "@builder.io/qwik/build";
 
 export const onGet: RequestHandler = async ({ url }) => {
   const articleId = url.pathname.split("/").filter(Boolean).at(-1);
@@ -15,7 +20,6 @@ export const onGet: RequestHandler = async ({ url }) => {
 
 export default component$(() => {
   const articleResource = useEndpoint<Article>();
-
   const savedSignal = useSignal("");
   const removedSignal = useSignal(false);
   const save = $(async (formData: ArticleFormData & { id: number }) => {
