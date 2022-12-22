@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@builder.io/qwik-city@0.0.128":
+"@builder.io/qwik-city@^0.0.128":
   version "0.0.128"
-  resolved "https://registry.npmjs.org/@builder.io/qwik-city/-/qwik-city-0.0.128.tgz"
+  resolved "https://registry.yarnpkg.com/@builder.io/qwik-city/-/qwik-city-0.0.128.tgz#66f8e375d3e1213242a2d1c0e7f2f72ca1f78202"
   integrity sha512-IgE2nZuoyRGRpsQ9HwbWV8IaaP9rWZGgi1hSzXJLCW2GrVfB49aNph3lQYDeoBOdvUSIucfGbUXFLn7215JOFA==
   dependencies:
     "@mdx-js/mdx" "2.1.5"
@@ -12,10 +12,12 @@
     source-map "0.7.4"
     vfile "5.3.6"
 
-"@builder.io/qwik@0.15.0":
-  version "0.15.0"
-  resolved "https://registry.npmjs.org/@builder.io/qwik/-/qwik-0.15.0.tgz"
-  integrity sha512-J2d0plXzG6pyIJRLtp3E/jLeoo0AXRjb5jne+iWqbtnR4ZwzTLo/OmEonbQIRv+IHQey3DsNbYr7z/ddkYR9/w==
+"@builder.io/qwik@^0.16.1":
+  version "0.16.1"
+  resolved "https://registry.yarnpkg.com/@builder.io/qwik/-/qwik-0.16.1.tgz#6a27f3e1a084816b9e1aaa80e82a4389768fa9ed"
+  integrity sha512-Ksd4v+m9jleCl4ru+aSihuX9/Ck2SWkGqa0EdhkbZdFXcTLYVdWfSrP07TRO/KDFGQbLeoc2+9slco+VzXA4AQ==
+  dependencies:
+    undici "^5.14.0"
 
 "@cush/relative@^1.0.0":
   version "1.0.0"
@@ -433,6 +435,13 @@ browserslist@^4.21.3:
     electron-to-chromium "^1.4.251"
     node-releases "^2.0.6"
     update-browserslist-db "^1.0.9"
+
+busboy@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/busboy/-/busboy-1.6.0.tgz#966ea36a9502e43cdb9146962523b92f531f6893"
+  integrity sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==
+  dependencies:
+    streamsearch "^1.1.0"
 
 callsites@^3.0.0:
   version "3.1.0"
@@ -2173,6 +2182,11 @@ space-separated-tokens@^2.0.0:
   resolved "https://registry.npmjs.org/space-separated-tokens/-/space-separated-tokens-2.0.2.tgz"
   integrity sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==
 
+streamsearch@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/streamsearch/-/streamsearch-1.1.0.tgz#404dd1e2247ca94af554e841a8ef0eaa238da764"
+  integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
+
 stringify-entities@^4.0.0:
   version "4.0.3"
   resolved "https://registry.npmjs.org/stringify-entities/-/stringify-entities-4.0.3.tgz"
@@ -2336,6 +2350,13 @@ typescript@4.9.3:
   version "4.9.3"
   resolved "https://registry.npmjs.org/typescript/-/typescript-4.9.3.tgz"
   integrity sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==
+
+undici@^5.14.0:
+  version "5.14.0"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-5.14.0.tgz#1169d0cdee06a4ffdd30810f6228d57998884d00"
+  integrity sha512-yJlHYw6yXPPsuOH0x2Ib1Km61vu4hLiRRQoafs+WUgX1vO64vgnxiCEN9dpIrhZyHFsai3F0AEj4P9zy19enEQ==
+  dependencies:
+    busboy "^1.6.0"
 
 unified@^10.0.0:
   version "10.1.2"
