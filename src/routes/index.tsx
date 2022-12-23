@@ -8,13 +8,15 @@ import ArticleComponent from "~/components/article-preview";
 export const onGet: RequestHandler = async (): Promise<Article[]> => {
   const prisma = new PrismaClient();
   const dbArticles = await prisma.article.findMany();
-  return dbArticles.map(({ id, name, content, teaser, url }) => ({
-    id,
-    name,
-    content,
-    teaser,
-    url,
-  }));
+  return Promise.all(
+    dbArticles.map(async ({ id, name, content, teaser, url }) => ({
+      id,
+      name,
+      content: await remark().process("#Hallo").then(String),
+      teaser,
+      url,
+    }))
+  );
 };
 
 export default component$(() => {
@@ -50,7 +52,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to the qwik Blog",
+  title: "Qwik Blog",
   meta: [
     {
       name: "description",

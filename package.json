@@ -24,6 +24,7 @@
     "@builder.io/qwik": "0.15.0",
     "@builder.io/qwik-city": "0.0.128",
     "@types/eslint": "8.4.10",
+    "@types/marked": "^4.0.7",
     "@types/node": "latest",
     "@typescript-eslint/eslint-plugin": "5.45.0",
     "@typescript-eslint/parser": "5.45.0",
@@ -42,6 +43,7 @@
     "zod": "^3.19.1"
   },
   "dependencies": {
-    "@prisma/client": "4.7.1"
+    "@prisma/client": "4.7.1",
+    "marked": "^4.2.3"
   }
 }

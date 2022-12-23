@@ -3,6 +3,7 @@ import { RequestHandler, useEndpoint } from "@builder.io/qwik-city";
 import { Article } from "~/model/article";
 import { findArticleByUrl } from "~/server/articles";
 import ArticleView from "~/components/article-view";
+import { marked } from "marked";
 
 export const onGet: RequestHandler = async ({ url }) => {
   const articleUrl = url.pathname.split("/").filter(Boolean).at(-1);
@@ -10,7 +11,18 @@ export const onGet: RequestHandler = async ({ url }) => {
     throw new Error(`cannot parse ${url}`);
   }
 
-  return await findArticleByUrl(articleUrl);
+  const article = await findArticleByUrl(articleUrl);
+  if (!article) {
+    throw new Error(`cannot find article with url ${articleUrl}`);
+  }
+
+  console.log(article.content);
+  console.log(marked.parse(article.content));
+
+  return {
+    ...article,
+    content: marked.parse(article.content),
+  };
 };
 
 export default component$(() => {

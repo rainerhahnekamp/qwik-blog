@@ -32,6 +32,10 @@ main {
   overflow: hidden;
 }
 
+a {
+  margin: 2em;
+}
+
 h1,
 h2 {
   margin: 0 0 5px 0;
