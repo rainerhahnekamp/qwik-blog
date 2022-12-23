@@ -1,7 +1,7 @@
 import { component$, Resource } from "@builder.io/qwik";
 import { RequestHandler, useEndpoint } from "@builder.io/qwik-city";
 import { Article } from "~/model/article";
-import { findArticleByUrl } from "~/server/articles";
+import { findArticleWithCommentsByUrl } from "~/server/articles";
 import ArticleView from "~/components/article-view";
 import { marked } from "marked";
 
@@ -11,7 +11,7 @@ export const onGet: RequestHandler = async ({ url }) => {
     throw new Error(`cannot parse ${url}`);
   }
 
-  const article = await findArticleByUrl(articleUrl);
+  const article = await findArticleWithCommentsByUrl(articleUrl);
   if (!article) {
     throw new Error(`cannot find article with url ${articleUrl}`);
   }
