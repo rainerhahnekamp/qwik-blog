@@ -3,15 +3,17 @@ import { Article } from "~/model/article";
 import {
   addArticleRequestSchema,
   addArticleToDb,
-  removeArticleFromDb,
   saveArticleRequestSchema,
   saveArticleToDb,
 } from "~/services/article-service";
-import { findArticleById } from "~/server/articles";
 
 export const onPost: RequestHandler<Article> = async ({ request }) => {
   const addArticleRequest = addArticleRequestSchema.parse(await request.json());
   return addArticleToDb(addArticleRequest);
+};
+
+export const onGet: RequestHandler<Article> = async ({ request }) => {
+  console.log(request.formData());
 };
 
 export const onPut: RequestHandler<Article> = async ({
