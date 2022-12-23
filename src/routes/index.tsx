@@ -4,6 +4,7 @@ import { useEndpoint } from "@builder.io/qwik-city";
 import { Article } from "~/model/article";
 import { PrismaClient } from "@prisma/client";
 import ArticleComponent from "~/components/article-preview";
+import { marked } from "marked";
 
 export const onGet: RequestHandler = async (): Promise<Article[]> => {
   const prisma = new PrismaClient();
@@ -12,7 +13,7 @@ export const onGet: RequestHandler = async (): Promise<Article[]> => {
     dbArticles.map(async ({ id, name, content, teaser, url }) => ({
       id,
       name,
-      content: await remark().process("#Hallo").then(String),
+      content: marked.parse("#Hallo"),
       teaser,
       url,
     }))
